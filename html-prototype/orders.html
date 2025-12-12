@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Assigned Orders List</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#137fec',
+              'background-light': '#f6f7f8',
+              'background-dark': '#101922',
+              'card-light': '#ffffff',
+              'card-dark': '#1a2634', // Slightly lighter than background-dark
+            },
+            fontFamily: {
+              display: ['Inter', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white pb-24"
+  >
+    <!-- Top App Bar -->
+    <div
+      class="sticky top-0 z-50 flex items-center justify-between bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 border-b border-slate-200 dark:border-slate-800"
+    >
+      <button
+        class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white transition-colors"
+      >
+        <span class="material-symbols-outlined">filter_list</span>
+      </button>
+      <h1 class="text-lg font-bold leading-tight tracking-tight">
+        Assigned Orders
+      </h1>
+      <button
+        class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-slate-200 dark:border-slate-700"
+      >
+        <img
+          alt="Profile avatar of a driver"
+          class="h-full w-full object-cover"
+          data-alt="Portrait of a smiling man with a beard"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM4oXILrxquA3sSzHNOW8B9dQQrtsdinD-W_wI6tmsisCwe3icUe1Ddv5XvfgZlAC5g4J-5pm0-1xNGctNRn1L8n1AvC2LjuBiAWgWd9pLLM6eWutWkw3Q3vF4VrY4EAApH5KVfr2dO_PWhh9XwpdbOY-_ArbferFEns0DlrZp-o2tzNqiqcMYZGvJFk-16efmBnZKJpRuEPIqwbahSkN1e-gQUsB_u9q5wu98fgy9uZgw8bq0fYV7F5AeSgbO2lhqvHqArIXa19k"
+        />
+      </button>
+    </div>
+    <!-- Greeting & Date Header -->
+    <div class="px-4 pt-6 pb-2">
+      <h2
+        class="text-[28px] font-bold leading-tight tracking-tight text-slate-900 dark:text-white"
+      >
+        Good Morning, Driver
+      </h2>
+      <p class="mt-1 text-sm font-medium text-slate-500 dark:text-slate-400">
+        Monday, Oct 24 • 9:41 AM
+      </p>
+    </div>
+    <!-- Stats Dashboard -->
+    <div class="flex w-full gap-3 overflow-x-auto px-4 py-4 no-scrollbar">
+      <!-- Card 1: Pending -->
+      <div
+        class="flex min-w-[140px] flex-1 flex-col justify-between rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800"
+      >
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-orange-500 text-[20px]"
+            >pending_actions</span
+          >
+          <p class="text-sm font-medium text-slate-500 dark:text-slate-400">
+            Pending
+          </p>
+        </div>
+        <p
+          class="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          3
+        </p>
+      </div>
+      <!-- Card 2: In Progress -->
+      <div
+        class="flex min-w-[140px] flex-1 flex-col justify-between rounded-xl bg-primary text-white p-4 shadow-md shadow-primary/20"
+      >
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-white/90 text-[20px]"
+            >local_shipping</span
+          >
+          <p class="text-sm font-medium text-white/90">In Progress</p>
+        </div>
+        <p class="mt-2 text-3xl font-bold tracking-tight">1</p>
+      </div>
+      <!-- Card 3: Completed -->
+      <div
+        class="flex min-w-[140px] flex-1 flex-col justify-between rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800"
+      >
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-green-500 text-[20px]"
+            >check_circle</span
+          >
+          <p class="text-sm font-medium text-slate-500 dark:text-slate-400">
+            Done
+          </p>
+        </div>
+        <p
+          class="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          8
+        </p>
+      </div>
+    </div>
+    <!-- Section Title -->
+    <div class="flex items-center justify-between px-4 py-2">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+        Today's Route
+      </h3>
+      <button class="text-sm font-semibold text-primary hover:text-primary/80">
+        View Map
+      </button>
+    </div>
+    <!-- Orders List -->
+    <div class="flex flex-col gap-3 px-4 pb-4">
+      <!-- Active Order (Highlight) -->
+      <div
+        class="group relative flex flex-col gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border-l-4 border-primary dark:border-primary"
+      >
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary"
+            >
+              <span class="material-symbols-outlined">package_2</span>
+            </div>
+            <div>
+              <p class="text-base font-bold text-slate-900 dark:text-white">
+                #ORD-4921
+              </p>
+              <p class="text-xs font-medium text-primary">In Progress</p>
+            </div>
+          </div>
+          <button
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >chevron_right</span
+            >
+          </button>
+        </div>
+        <div class="my-1 h-px w-full bg-slate-100 dark:bg-slate-700/50"></div>
+        <div class="flex flex-col gap-2">
+          <div class="flex items-start gap-3">
+            <span
+              class="material-symbols-outlined mt-0.5 text-[18px] text-slate-400"
+              >person</span
+            >
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-300">
+              Alice Johnson
+            </p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span
+              class="material-symbols-outlined mt-0.5 text-[18px] text-slate-400"
+              >location_on</span
+            >
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-300">
+              123 Main St, Springfield, IL 62704
+            </p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span
+              class="material-symbols-outlined mt-0.5 text-[18px] text-slate-400"
+              >schedule</span
+            >
+            <p class="text-sm font-medium text-orange-500">Due by 2:00 PM</p>
+          </div>
+        </div>
+        <div class="mt-2 flex gap-2">
+          <button
+            class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/90"
+          >
+            Complete Delivery
+          </button>
+          <button
+            class="flex h-[42px] w-[42px] items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
+          >
+            <span class="material-symbols-outlined">call</span>
+          </button>
+        </div>
+      </div>
+      <!-- Pending Order 1 -->
+      <div
+        class="relative flex flex-col gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800"
+      >
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+            >
+              <span class="material-symbols-outlined">inventory_2</span>
+            </div>
+            <div>
+              <p class="text-base font-bold text-slate-900 dark:text-white">
+                #ORD-4922
+              </p>
+              <p class="text-xs font-medium text-slate-500 dark:text-slate-400">
+                Ready for Pickup
+              </p>
+            </div>
+          </div>
+          <button
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >chevron_right</span
+            >
+          </button>
+        </div>
+        <div class="flex flex-col gap-2 pl-[52px]">
+          <p class="text-sm text-slate-700 dark:text-slate-300 line-clamp-1">
+            456 Oak Avenue, Springfield
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            Due 3:30 PM • Robert Fox
+          </p>
+        </div>
+      </div>
+      <!-- Pending Order 2 -->
+      <div
+        class="relative flex flex-col gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800"
+      >
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+            >
+              <span class="material-symbols-outlined">inventory_2</span>
+            </div>
+            <div>
+              <p class="text-base font-bold text-slate-900 dark:text-white">
+                #ORD-4923
+              </p>
+              <p class="text-xs font-medium text-slate-500 dark:text-slate-400">
+                Ready for Pickup
+              </p>
+            </div>
+          </div>
+          <button
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >chevron_right</span
+            >
+          </button>
+        </div>
+        <div class="flex flex-col gap-2 pl-[52px]">
+          <p class="text-sm text-slate-700 dark:text-slate-300 line-clamp-1">
+            789 Pine Lane, Springfield
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            Due 4:15 PM • Wade Warren
+          </p>
+        </div>
+      </div>
+      <!-- Pending Order 3 -->
+      <div
+        class="relative flex flex-col gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800 opacity-80"
+      >
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+            >
+              <span class="material-symbols-outlined">inventory_2</span>
+            </div>
+            <div>
+              <p class="text-base font-bold text-slate-900 dark:text-white">
+                #ORD-4924
+              </p>
+              <p class="text-xs font-medium text-slate-500 dark:text-slate-400">
+                Preparing
+              </p>
+            </div>
+          </div>
+          <button
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >chevron_right</span
+            >
+          </button>
+        </div>
+        <div class="flex flex-col gap-2 pl-[52px]">
+          <p class="text-sm text-slate-700 dark:text-slate-300 line-clamp-1">
+            101 Maple Dr, West End
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            Due 5:00 PM • Esther Howard
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Navigation -->
+    <div
+      class="fixed bottom-0 left-0 right-0 border-t border-slate-200 dark:border-slate-800 bg-card-light dark:bg-card-dark pb-6 pt-2 shadow-lg"
+    >
+      <div class="flex justify-around">
+        <button class="flex flex-col items-center gap-1 p-2 text-primary">
+          <span class="material-symbols-outlined fill-1">home</span>
+          <span class="text-[10px] font-medium">Home</span>
+        </button>
+        <button
+          class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        >
+          <span class="material-symbols-outlined">map</span>
+          <span class="text-[10px] font-medium">Map</span>
+        </button>
+        <button
+          class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        >
+          <span class="material-symbols-outlined">history</span>
+          <span class="text-[10px] font-medium">History</span>
+        </button>
+        <button
+          class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        >
+          <span class="material-symbols-outlined">person</span>
+          <span class="text-[10px] font-medium">Profile</span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

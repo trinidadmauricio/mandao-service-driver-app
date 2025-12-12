@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Driver Profile</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#137fec',
+              'background-light': '#f6f7f8',
+              'background-dark': '#101922',
+            },
+            fontFamily: {
+              display: ['Inter', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar hide for cleaner mobile look */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white"
+  >
+    <div
+      class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark border-x border-slate-200 dark:border-slate-800 shadow-2xl"
+    >
+      <!-- Top App Bar -->
+      <header
+        class="flex items-center justify-between p-4 sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md"
+      >
+        <div class="w-10 flex items-center justify-center">
+          <span
+            class="material-symbols-outlined text-slate-900 dark:text-white cursor-pointer select-none"
+            >arrow_back_ios_new</span
+          >
+        </div>
+        <h2
+          class="text-lg font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Profile
+        </h2>
+        <div class="w-10 flex items-center justify-center">
+          <span
+            class="material-symbols-outlined text-slate-900 dark:text-white cursor-pointer select-none"
+            >settings</span
+          >
+        </div>
+      </header>
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col gap-6 p-4">
+        <!-- Profile Header -->
+        <section class="flex flex-col items-center gap-4 py-2">
+          <div class="relative group cursor-pointer">
+            <div
+              class="h-28 w-28 rounded-full border-4 border-slate-200 dark:border-[#233648] shadow-lg overflow-hidden bg-center bg-cover"
+              data-alt="Portrait of a smiling male driver"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVbw7KxrreX5JJHtkSvI1EXUnDu8BMqQRX5sSdkkCYLW-lgsOwJWthrI8BPzbXHzimdztPzO6ZLQrHyYlTZO5mt83hUIXBHz2At38MvHPE2_ubJIXheYRayV5wwVzO8Mdx7tfffL4_Q8oMOO_HpTbY6qnWX59X85FSdV6Y9xg4JzajSY526TibVrx_oOAlJCzv3Y2WRNSDejSfwsaAHfpGuMfWARdgT7WXIN_P2OxvJcDSR4_Leo17eZQS_Nkw6vgsMmf4dvffYfI');
+              "
+            ></div>
+            <div
+              class="absolute bottom-0 right-0 bg-primary text-white rounded-full p-1.5 border-[3px] border-background-light dark:border-background-dark flex items-center justify-center shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[16px] leading-none"
+                >edit</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col items-center text-center gap-1">
+            <h1
+              class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight"
+            >
+              Alex Johnson
+            </h1>
+            <div
+              class="flex items-center gap-1.5 text-slate-500 dark:text-[#92adc9] text-sm font-medium"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >directions_car</span
+              >
+              <span>Silver Tier • Toyota Prius</span>
+            </div>
+          </div>
+        </section>
+        <!-- Status Toggle Card -->
+        <div class="w-full">
+          <div
+            class="flex flex-row items-center justify-between gap-4 rounded-xl border border-slate-200 dark:border-[#324d67] bg-white dark:bg-[#1b2b3a] p-5 shadow-sm"
+          >
+            <div class="flex flex-col gap-1">
+              <p
+                class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+              >
+                You are Online
+              </p>
+              <p
+                class="text-emerald-500 dark:text-emerald-400 text-sm font-medium flex items-center gap-1"
+              >
+                <span
+                  class="h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400 inline-block animate-pulse"
+                ></span>
+                Receiving orders
+              </p>
+            </div>
+            <label
+              class="relative flex h-8 w-14 cursor-pointer items-center rounded-full bg-slate-200 dark:bg-[#233648] p-1 transition-colors duration-300 has-[:checked]:bg-primary"
+            >
+              <input checked="" class="peer sr-only" type="checkbox" />
+              <div
+                class="h-6 w-6 rounded-full bg-white shadow-md transition-transform duration-300 peer-checked:translate-x-6"
+              ></div>
+            </label>
+          </div>
+        </div>
+        <!-- Stats Grid -->
+        <section class="grid grid-cols-3 gap-3">
+          <div
+            class="flex flex-col gap-1 rounded-xl border border-slate-200 dark:border-[#324d67] bg-white dark:bg-[#1b2b3a] p-3 py-4 items-center text-center shadow-sm hover:border-primary/50 transition-colors"
+          >
+            <p
+              class="text-slate-900 dark:text-white text-xl font-bold leading-tight"
+            >
+              4.95
+            </p>
+            <div class="flex items-center gap-1 justify-center">
+              <span
+                class="material-symbols-outlined text-amber-400 text-[16px] leading-none fill-current"
+                >star</span
+              >
+              <p class="text-slate-500 dark:text-[#92adc9] text-xs font-medium">
+                Rating
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-1 rounded-xl border border-slate-200 dark:border-[#324d67] bg-white dark:bg-[#1b2b3a] p-3 py-4 items-center text-center shadow-sm hover:border-primary/50 transition-colors"
+          >
+            <p
+              class="text-slate-900 dark:text-white text-xl font-bold leading-tight"
+            >
+              1,240
+            </p>
+            <div class="flex items-center gap-1 justify-center">
+              <span
+                class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-[16px] leading-none"
+                >local_shipping</span
+              >
+              <p class="text-slate-500 dark:text-[#92adc9] text-xs font-medium">
+                Deliveries
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-1 rounded-xl border border-slate-200 dark:border-[#324d67] bg-white dark:bg-[#1b2b3a] p-3 py-4 items-center text-center shadow-sm hover:border-primary/50 transition-colors"
+          >
+            <p
+              class="text-slate-900 dark:text-white text-xl font-bold leading-tight"
+            >
+              98%
+            </p>
+            <div class="flex items-center gap-1 justify-center">
+              <span
+                class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-[16px] leading-none"
+                >check_circle</span
+              >
+              <p class="text-slate-500 dark:text-[#92adc9] text-xs font-medium">
+                Acceptance
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Menu List -->
+        <nav class="flex flex-col gap-3 pb-8">
+          <!-- List Item 1 -->
+          <button
+            class="flex items-center gap-4 bg-white dark:bg-[#1b2b3a] p-4 rounded-xl border border-slate-200 dark:border-[#324d67] shadow-sm hover:bg-slate-50 dark:hover:bg-[#233648] transition-colors group"
+          >
+            <div
+              class="flex items-center justify-center rounded-lg bg-blue-50 dark:bg-[#233648] text-primary group-hover:bg-primary group-hover:text-white transition-colors h-10 w-10 shrink-0"
+            >
+              <span class="material-symbols-outlined">directions_car</span>
+            </div>
+            <div class="flex flex-1 items-center justify-between">
+              <p class="text-slate-900 dark:text-white text-base font-medium">
+                Vehicle Information
+              </p>
+              <span
+                class="material-symbols-outlined text-slate-400 dark:text-[#92adc9]"
+                >chevron_right</span
+              >
+            </div>
+          </button>
+          <!-- List Item 2 -->
+          <button
+            class="flex items-center gap-4 bg-white dark:bg-[#1b2b3a] p-4 rounded-xl border border-slate-200 dark:border-[#324d67] shadow-sm hover:bg-slate-50 dark:hover:bg-[#233648] transition-colors group"
+          >
+            <div
+              class="flex items-center justify-center rounded-lg bg-blue-50 dark:bg-[#233648] text-primary group-hover:bg-primary group-hover:text-white transition-colors h-10 w-10 shrink-0"
+            >
+              <span class="material-symbols-outlined">payments</span>
+            </div>
+            <div class="flex flex-1 items-center justify-between">
+              <p class="text-slate-900 dark:text-white text-base font-medium">
+                Earnings History
+              </p>
+              <span
+                class="material-symbols-outlined text-slate-400 dark:text-[#92adc9]"
+                >chevron_right</span
+              >
+            </div>
+          </button>
+          <!-- List Item 3 -->
+          <button
+            class="flex items-center gap-4 bg-white dark:bg-[#1b2b3a] p-4 rounded-xl border border-slate-200 dark:border-[#324d67] shadow-sm hover:bg-slate-50 dark:hover:bg-[#233648] transition-colors group"
+          >
+            <div
+              class="flex items-center justify-center rounded-lg bg-blue-50 dark:bg-[#233648] text-primary group-hover:bg-primary group-hover:text-white transition-colors h-10 w-10 shrink-0"
+            >
+              <span class="material-symbols-outlined">description</span>
+            </div>
+            <div class="flex flex-1 items-center justify-between">
+              <p class="text-slate-900 dark:text-white text-base font-medium">
+                Documents
+              </p>
+              <div class="flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-red-500"></span>
+                <span
+                  class="material-symbols-outlined text-slate-400 dark:text-[#92adc9]"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+          </button>
+          <!-- List Item 4 -->
+          <button
+            class="flex items-center gap-4 bg-white dark:bg-[#1b2b3a] p-4 rounded-xl border border-slate-200 dark:border-[#324d67] shadow-sm hover:bg-slate-50 dark:hover:bg-[#233648] transition-colors group"
+          >
+            <div
+              class="flex items-center justify-center rounded-lg bg-blue-50 dark:bg-[#233648] text-primary group-hover:bg-primary group-hover:text-white transition-colors h-10 w-10 shrink-0"
+            >
+              <span class="material-symbols-outlined"
+                >account_balance_wallet</span
+              >
+            </div>
+            <div class="flex flex-1 items-center justify-between">
+              <p class="text-slate-900 dark:text-white text-base font-medium">
+                Payout Methods
+              </p>
+              <span
+                class="material-symbols-outlined text-slate-400 dark:text-[#92adc9]"
+                >chevron_right</span
+              >
+            </div>
+          </button>
+          <!-- Log Out Button -->
+          <button
+            class="mt-4 flex items-center justify-center w-full p-4 rounded-xl text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors font-medium text-base"
+          >
+            Log Out
+          </button>
+        </nav>
+      </main>
+      <!-- Bottom Navigation -->
+      <nav
+        class="sticky bottom-0 z-50 bg-white dark:bg-[#101922] border-t border-slate-200 dark:border-slate-800 pb-5 pt-3 px-6 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]"
+      >
+        <div class="flex items-center justify-between">
+          <a
+            class="flex flex-col items-center gap-1 text-slate-400 dark:text-[#92adc9] hover:text-primary dark:hover:text-white group"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform"
+              >home</span
+            >
+            <span class="text-[10px] font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-400 dark:text-[#92adc9] hover:text-primary dark:hover:text-white group"
+            href="#"
+          >
+            <div class="relative">
+              <span
+                class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform"
+                >list_alt</span
+              >
+              <span
+                class="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-primary border-2 border-white dark:border-[#101922]"
+              ></span>
+            </div>
+            <span class="text-[10px] font-medium">Orders</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined text-[24px] fill-current"
+              >person</span
+            >
+            <span class="text-[10px] font-medium">Profile</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

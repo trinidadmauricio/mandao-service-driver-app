@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Driver Reports</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#137fec',
+              'background-light': '#f6f7f8',
+              'background-dark': '#101922',
+              'surface-dark': '#1C252E',
+              'surface-light': '#FFFFFF',
+            },
+            fontFamily: {
+              display: ['Inter', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.375rem', // rounded-md approx
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for clean look */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #324d67;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #137fec;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white transition-colors duration-200 antialiased min-h-screen"
+  >
+    <div class="max-w-md mx-auto min-h-screen relative flex flex-col pb-6">
+      <!-- Header -->
+      <header
+        class="flex items-center justify-between p-4 sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm"
+      >
+        <h1 class="text-2xl font-bold leading-tight tracking-tight">Reports</h1>
+        <button
+          class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+        >
+          <span
+            class="material-symbols-outlined text-gray-600 dark:text-gray-300"
+            >ios_share</span
+          >
+        </button>
+      </header>
+      <!-- Time Period Selector -->
+      <div class="px-4 pb-6">
+        <div class="flex p-1 bg-gray-200 dark:bg-[#1C252E] rounded-lg">
+          <label class="flex-1 cursor-pointer">
+            <input
+              class="peer sr-only"
+              name="period"
+              type="radio"
+              value="today"
+            />
+            <div
+              class="py-1.5 text-sm font-medium text-center rounded text-gray-500 dark:text-gray-400 peer-checked:bg-white dark:peer-checked:bg-[#2C3B4E] peer-checked:text-primary peer-checked:shadow-sm transition-all"
+            >
+              Today
+            </div>
+          </label>
+          <label class="flex-1 cursor-pointer">
+            <input
+              checked=""
+              class="peer sr-only"
+              name="period"
+              type="radio"
+              value="weekly"
+            />
+            <div
+              class="py-1.5 text-sm font-medium text-center rounded text-gray-500 dark:text-gray-400 peer-checked:bg-white dark:peer-checked:bg-[#2C3B4E] peer-checked:text-primary peer-checked:shadow-sm transition-all"
+            >
+              Weekly
+            </div>
+          </label>
+          <label class="flex-1 cursor-pointer">
+            <input
+              class="peer sr-only"
+              name="period"
+              type="radio"
+              value="monthly"
+            />
+            <div
+              class="py-1.5 text-sm font-medium text-center rounded text-gray-500 dark:text-gray-400 peer-checked:bg-white dark:peer-checked:bg-[#2C3B4E] peer-checked:text-primary peer-checked:shadow-sm transition-all"
+            >
+              Monthly
+            </div>
+          </label>
+        </div>
+      </div>
+      <!-- Earnings Hero -->
+      <div class="px-4 pb-6 text-center">
+        <p
+          class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1"
+        >
+          Total Earnings
+        </p>
+        <h2
+          class="text-4xl font-bold text-gray-900 dark:text-white tracking-tight"
+        >
+          $1,240.50
+        </h2>
+        <div
+          class="inline-flex items-center gap-1 mt-2 px-2.5 py-0.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-semibold"
+        >
+          <span
+            class="material-symbols-outlined text-sm"
+            style="font-size: 16px"
+            >trending_up</span
+          >
+          +$52.00 vs last week
+        </div>
+      </div>
+      <!-- Performance Grid -->
+      <div class="px-4 grid grid-cols-2 gap-3 pb-6">
+        <!-- Deliveries -->
+        <div
+          class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-3"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="p-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-primary"
+            >
+              <span class="material-symbols-outlined" style="font-size: 20px"
+                >local_shipping</span
+              >
+            </div>
+            <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+              >Deliveries</span
+            >
+          </div>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white">45</p>
+        </div>
+        <!-- Rating -->
+        <div
+          class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-3"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="p-2 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400"
+            >
+              <span class="material-symbols-outlined" style="font-size: 20px"
+                >star</span
+              >
+            </div>
+            <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+              >Rating</span
+            >
+          </div>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white">4.9</p>
+        </div>
+        <!-- Tips -->
+        <div
+          class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-3"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="p-2 rounded-lg bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400"
+            >
+              <span class="material-symbols-outlined" style="font-size: 20px"
+                >attach_money</span
+              >
+            </div>
+            <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+              >Tips</span
+            >
+          </div>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white">$145</p>
+        </div>
+        <!-- Hours -->
+        <div
+          class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-3"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="p-2 rounded-lg bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400"
+            >
+              <span class="material-symbols-outlined" style="font-size: 20px"
+                >schedule</span
+              >
+            </div>
+            <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+              >Hours</span
+            >
+          </div>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white">32h</p>
+        </div>
+      </div>
+      <!-- Chart Section -->
+      <div class="px-4 pb-6">
+        <div
+          class="bg-white dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800"
+        >
+          <div class="flex justify-between items-end mb-6">
+            <div>
+              <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                Earnings Trend
+              </h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                Sep 18 - Sep 24
+              </p>
+            </div>
+            <button class="text-primary text-xs font-semibold hover:underline">
+              View Details
+            </button>
+          </div>
+          <!-- Bar Chart Visualization -->
+          <div class="h-40 flex items-end justify-between gap-2">
+            <!-- Monday -->
+            <div class="flex flex-col items-center gap-2 flex-1 group">
+              <div
+                class="w-full bg-primary/20 dark:bg-primary/20 rounded-t-sm relative h-32 group-hover:bg-primary/30 transition-colors overflow-hidden"
+              >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-primary h-[40%] rounded-t-sm"
+                ></div>
+              </div>
+              <span class="text-[10px] font-medium text-gray-400 uppercase"
+                >Mon</span
+              >
+            </div>
+            <!-- Tuesday -->
+            <div class="flex flex-col items-center gap-2 flex-1 group">
+              <div
+                class="w-full bg-primary/20 dark:bg-primary/20 rounded-t-sm relative h-32 group-hover:bg-primary/30 transition-colors overflow-hidden"
+              >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-primary h-[65%] rounded-t-sm"
+                ></div>
+              </div>
+              <span class="text-[10px] font-medium text-gray-400 uppercase"
+                >Tue</span
+              >
+            </div>
+            <!-- Wednesday -->
+            <div class="flex flex-col items-center gap-2 flex-1 group">
+              <div
+                class="w-full bg-primary/20 dark:bg-primary/20 rounded-t-sm relative h-32 group-hover:bg-primary/30 transition-colors overflow-hidden"
+              >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-primary h-[50%] rounded-t-sm"
+                ></div>
+              </div>
+              <span class="text-[10px] font-medium text-gray-400 uppercase"
+                >Wed</span
+              >
+            </div>
+            <!-- Thursday -->
+            <div class="flex flex-col items-center gap-2 flex-1 group">
+              <div
+                class="w-full bg-primary/20 dark:bg-primary/20 rounded-t-sm relative h-32 group-hover:bg-primary/30 transition-colors overflow-hidden"
+              >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-primary h-[85%] rounded-t-sm"
+                ></div>
+              </div>
+              <span class="text-[10px] font-medium text-gray-400 uppercase"
+                >Thu</span
+              >
+            </div>
+            <!-- Friday -->
+            <div class="flex flex-col items-center gap-2 flex-1 group">
+              <div
+                class="w-full bg-primary/20 dark:bg-primary/20 rounded-t-sm relative h-32 group-hover:bg-primary/30 transition-colors overflow-hidden"
+              >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-primary h-[90%] rounded-t-sm"
+                ></div>
+              </div>
+              <span class="text-[10px] font-medium text-gray-400 uppercase"
+                >Fri</span
+              >
+            </div>
+            <!-- Saturday -->
+            <div class="flex flex-col items-center gap-2 flex-1 group">
+              <div
+                class="w-full bg-primary/20 dark:bg-primary/20 rounded-t-sm relative h-32 group-hover:bg-primary/30 transition-colors overflow-hidden"
+              >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-primary h-[100%] rounded-t-sm"
+                ></div>
+              </div>
+              <span
+                class="text-[10px] font-medium text-gray-900 dark:text-white uppercase"
+                >Sat</span
+              >
+            </div>
+            <!-- Sunday -->
+            <div class="flex flex-col items-center gap-2 flex-1 group">
+              <div
+                class="w-full bg-primary/20 dark:bg-primary/20 rounded-t-sm relative h-32 group-hover:bg-primary/30 transition-colors overflow-hidden"
+              >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-primary h-[60%] rounded-t-sm"
+                ></div>
+              </div>
+              <span class="text-[10px] font-medium text-gray-400 uppercase"
+                >Sun</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Recent Activity List -->
+      <div class="px-4 pb-6 flex-1">
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">
+          Recent Trips
+        </h3>
+        <div class="flex flex-col gap-3">
+          <!-- Trip Item 1 -->
+          <div
+            class="flex items-center justify-between p-3 bg-white dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-[#2C3B4E] flex items-center justify-center text-gray-600 dark:text-gray-300"
+              >
+                <span class="material-symbols-outlined" style="font-size: 20px"
+                  >package_2</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="text-sm font-semibold text-gray-900 dark:text-white"
+                  >Order #2931</span
+                >
+                <span class="text-xs text-gray-500 dark:text-gray-400"
+                  >Downtown • 20 min ago</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col items-end">
+              <span class="text-sm font-bold text-primary">$14.50</span>
+              <span
+                class="text-[10px] text-green-600 dark:text-green-400 font-medium"
+                >+ $3.00 Tip</span
+              >
+            </div>
+          </div>
+          <!-- Trip Item 2 -->
+          <div
+            class="flex items-center justify-between p-3 bg-white dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-[#2C3B4E] flex items-center justify-center text-gray-600 dark:text-gray-300"
+              >
+                <span class="material-symbols-outlined" style="font-size: 20px"
+                  >package_2</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="text-sm font-semibold text-gray-900 dark:text-white"
+                  >Order #2930</span
+                >
+                <span class="text-xs text-gray-500 dark:text-gray-400"
+                  >Westside • 1h ago</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col items-end">
+              <span class="text-sm font-bold text-primary">$22.00</span>
+              <span
+                class="text-[10px] text-green-600 dark:text-green-400 font-medium"
+                >+ $5.00 Tip</span
+              >
+            </div>
+          </div>
+          <!-- Trip Item 3 -->
+          <div
+            class="flex items-center justify-between p-3 bg-white dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-[#2C3B4E] flex items-center justify-center text-gray-600 dark:text-gray-300"
+              >
+                <span class="material-symbols-outlined" style="font-size: 20px"
+                  >package_2</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="text-sm font-semibold text-gray-900 dark:text-white"
+                  >Order #2929</span
+                >
+                <span class="text-xs text-gray-500 dark:text-gray-400"
+                  >Uptown • 2h ago</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col items-end">
+              <span class="text-sm font-bold text-primary">$18.25</span>
+            </div>
+          </div>
+          <!-- Trip Item 4 -->
+          <div
+            class="flex items-center justify-between p-3 bg-white dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-[#2C3B4E] flex items-center justify-center text-gray-600 dark:text-gray-300"
+              >
+                <span class="material-symbols-outlined" style="font-size: 20px"
+                  >package_2</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="text-sm font-semibold text-gray-900 dark:text-white"
+                  >Order #2928</span
+                >
+                <span class="text-xs text-gray-500 dark:text-gray-400"
+                  >Suburbs • 3h ago</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col items-end">
+              <span class="text-sm font-bold text-primary">$34.50</span>
+              <span
+                class="text-[10px] text-green-600 dark:text-green-400 font-medium"
+                >+ $8.50 Tip</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

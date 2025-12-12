@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "mandao-driver-app-expo",
+    "name": "Mandao Driver",
     "slug": "mandao-driver-app-expo",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,18 +13,34 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mandao.driver",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Esta aplicación necesita acceso a tu ubicación para rastrear tus entregas en tiempo real.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Esta aplicación necesita acceso a tu ubicación en segundo plano para continuar rastreando tus entregas incluso cuando la app está cerrada.",
+        "UIBackgroundModes": ["location"]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "package": "com.mandao.driver",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION"
+      ],
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "apiUrl": "https://mandao-backend.ngrok.app",
+      "wsUrl": "wss://mandao-backend.ngrok.app"
     }
   }
 }

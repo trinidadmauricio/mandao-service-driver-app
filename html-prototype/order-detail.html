@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Order Details</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#137fec',
+              'background-light': '#f6f7f8',
+              'background-dark': '#101922',
+            },
+            fontFamily: {
+              display: ['Inter', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased"
+  >
+    <div
+      class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-28"
+    >
+      <!-- Header -->
+      <div
+        class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-20"
+      >
+        <div
+          class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 cursor-pointer"
+        >
+          <span class="material-symbols-outlined text-2xl">arrow_back</span>
+        </div>
+        <h2
+          class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center"
+        >
+          Order #OD-2938
+        </h2>
+        <div
+          class="flex size-12 items-center justify-center shrink-0 rounded-full hover:bg-black/5 dark:hover:bg-white/10 cursor-pointer"
+        >
+          <span class="material-symbols-outlined text-2xl">help_outline</span>
+        </div>
+      </div>
+      <!-- Status & Map Section -->
+      <div class="px-4 py-2 flex flex-col gap-3">
+        <div class="flex justify-between items-center">
+          <div
+            class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-yellow-500/20 dark:bg-yellow-500/10 px-3 border border-yellow-500/20"
+          >
+            <span
+              class="material-symbols-outlined text-yellow-700 dark:text-yellow-500 text-[18px]"
+              >schedule</span
+            >
+            <p
+              class="text-yellow-700 dark:text-yellow-500 text-sm font-medium leading-normal"
+            >
+              Pending Acceptance
+            </p>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+            Expected by 7:45 PM
+          </p>
+        </div>
+        <div
+          class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl object-cover shadow-sm border border-slate-200 dark:border-slate-800 relative overflow-hidden"
+          data-alt="Map showing route from pickup to delivery point"
+          data-location="San Francisco"
+          style="
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4mv0bJTyxWmchQr3S2MPVyx5o-C1It-yy7scJ7GXJhPJZVLDd3wBcjmAJqn9Ov2g7oG-pJRu92syfBQU_TmiXXyGtPgswc9OPa6AJGrtXaPZteXOJZ3jV9fDhVde9gbi-WtjZnK-l1pO4zxeVKD1Y3-xI2ANdQ8UpOjs9C9hKG076FVwFypV9QMgcnlAZm_ohoSwg6wqA15FAEMPv97jrZ1D305w3eZmp5UaQucD0n6Lgy7RrWkq9AxIiMG1HuMdg4_V_ifu63wY');
+          "
+        >
+          <div
+            class="absolute bottom-3 right-3 bg-white dark:bg-slate-800 p-2 rounded-lg shadow-md border border-slate-100 dark:border-slate-700"
+          >
+            <span
+              class="material-symbols-outlined text-slate-900 dark:text-white"
+              >near_me</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="h-2"></div>
+      <!-- Customer Section -->
+      <div class="flex flex-col gap-2 px-4">
+        <h3
+          class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-2"
+        >
+          Customer
+        </h3>
+        <div
+          class="bg-white dark:bg-[#1a2632] rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800"
+        >
+          <!-- Profile Header -->
+          <div
+            class="flex items-center gap-4 justify-between mb-4 border-b border-slate-100 dark:border-slate-700 pb-4"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12"
+                data-alt="Profile picture of customer Sarah J"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBU3PArqxpGqDkmpv7aLf4CC1xUvq3cKEz6BBDpb9uPs2jOsc88E6TrG9ILxWVbKmp9T8imd2HogZdp9cP1J34sokmfxAQwl5ljRQ6hS9HRJBzl0Oy-yq88vc1AVtMSX0BL65TmSfnBvAB8yzInDAVYmpa2RcZ2T5NVwx_vWKXDul6ITQXlyjjh3LvlOlInikCvo6d90JDoekSYZWhGcTpf0eNafCIDMuZZqd8CxMS_9IMAiTVdUySStX0kmNlZdLfjjvfpk3cRXXY');
+                "
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p
+                  class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1"
+                >
+                  Sarah J.
+                </p>
+                <div class="flex items-center gap-1">
+                  <span
+                    class="material-symbols-outlined text-yellow-500 text-[16px] fill-1"
+                    >star</span
+                  >
+                  <p
+                    class="text-slate-500 dark:text-[#92adc9] text-sm font-normal leading-normal"
+                  >
+                    4.9 (12 orders)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex items-center justify-center size-10 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-primary"
+              >
+                <span class="material-symbols-outlined">call</span>
+              </button>
+              <button
+                class="flex items-center justify-center size-10 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-primary"
+              >
+                <span class="material-symbols-outlined">chat</span>
+              </button>
+            </div>
+          </div>
+          <!-- Address Details -->
+          <div class="flex flex-col gap-3">
+            <div class="flex gap-3 items-start">
+              <div class="shrink-0 mt-0.5 text-primary">
+                <span class="material-symbols-outlined fill-1"
+                  >location_on</span
+                >
+              </div>
+              <div class="flex-1">
+                <p class="text-slate-900 dark:text-white text-base font-medium">
+                  123 Main St, Apt 4B
+                </p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">
+                  San Francisco, CA 94105
+                </p>
+                <div
+                  class="mt-1 inline-flex items-center gap-1 text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >distance</span
+                  >
+                  2.4 mi away
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full mt-2 flex items-center justify-center gap-2 rounded-lg h-10 bg-primary/10 hover:bg-primary/20 text-primary font-semibold text-sm transition-colors"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >navigation</span
+              >
+              Navigate to Destination
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="h-4"></div>
+      <!-- Order Manifest -->
+      <div class="flex flex-col gap-2 px-4">
+        <div class="flex items-center justify-between">
+          <h3
+            class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-2"
+          >
+            Order Items
+          </h3>
+          <span class="text-sm text-slate-500 dark:text-slate-400"
+            >3 Items</span
+          >
+        </div>
+        <div
+          class="bg-white dark:bg-[#1a2632] rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col gap-4"
+        >
+          <!-- Item 1 -->
+          <div class="flex justify-between items-start">
+            <div class="flex gap-3">
+              <div
+                class="flex items-center justify-center size-6 rounded bg-slate-100 dark:bg-slate-700 text-xs font-bold text-slate-700 dark:text-white shrink-0"
+              >
+                1x
+              </div>
+              <div>
+                <p class="text-slate-900 dark:text-white text-sm font-medium">
+                  Margherita Pizza
+                </p>
+                <p class="text-slate-500 dark:text-slate-400 text-xs">
+                  Extra Cheese
+                </p>
+              </div>
+            </div>
+            <p class="text-slate-900 dark:text-white text-sm font-medium">
+              $12.50
+            </p>
+          </div>
+          <!-- Item 2 -->
+          <div class="flex justify-between items-start">
+            <div class="flex gap-3">
+              <div
+                class="flex items-center justify-center size-6 rounded bg-slate-100 dark:bg-slate-700 text-xs font-bold text-slate-700 dark:text-white shrink-0"
+              >
+                2x
+              </div>
+              <div>
+                <p class="text-slate-900 dark:text-white text-sm font-medium">
+                  Coke Zero
+                </p>
+                <p class="text-slate-500 dark:text-slate-400 text-xs">
+                  Can 330ml
+                </p>
+              </div>
+            </div>
+            <p class="text-slate-900 dark:text-white text-sm font-medium">
+              $4.00
+            </p>
+          </div>
+          <!-- Divider -->
+          <div class="h-px w-full bg-slate-100 dark:bg-slate-700 my-1"></div>
+          <!-- Customer Note -->
+          <div
+            class="flex gap-3 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-100 dark:border-blue-900/30"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-[20px] shrink-0"
+              >info</span
+            >
+            <div>
+              <p
+                class="text-primary text-xs font-bold uppercase tracking-wider mb-0.5"
+              >
+                Customer Note
+              </p>
+              <p class="text-slate-700 dark:text-slate-300 text-sm">
+                "Please leave at the front door and ring the bell."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-4"></div>
+      <!-- Financials -->
+      <div class="px-4">
+        <div
+          class="bg-primary rounded-xl p-4 shadow-lg shadow-primary/20 flex items-center justify-between text-white"
+        >
+          <div class="flex flex-col">
+            <span class="text-white/80 text-sm font-medium"
+              >Estimated Payout</span
+            >
+            <div class="flex items-baseline gap-1">
+              <span class="text-2xl font-bold">$16.50</span>
+              <span class="text-white/60 text-xs">(includes $4.00 tip)</span>
+            </div>
+          </div>
+          <div
+            class="size-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm"
+          >
+            <span class="material-symbols-outlined">payments</span>
+          </div>
+        </div>
+      </div>
+      <!-- Sticky Footer -->
+      <div
+        class="fixed bottom-0 left-0 right-0 p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 z-50"
+      >
+        <button
+          class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all text-white gap-2 text-lg font-bold leading-normal shadow-lg shadow-primary/25"
+        >
+          <span>Accept Order</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
